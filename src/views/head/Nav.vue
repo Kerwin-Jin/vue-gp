@@ -49,7 +49,6 @@ export default {
     components:{LoginDialog},
     mounted(){
         this.getNavData();
-        console.log(this.endIndex);
     },
     methods:{
         getNavData(){
