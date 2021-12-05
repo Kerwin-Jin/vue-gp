@@ -13,65 +13,57 @@
           <li v-for="item in navList.nav" :key="item.id"><a :href="item.link ? item.link : 'javascript:;'" :target="item.link ? '_blank' : ''">{{item.name}}</a></li>
         </ul>
         <div class="login">
-          <span></span>
-          <p>特种兵，请<span>登录</span></p>
+          <span @click="isShow"></span>
+          <p>特种兵，请<span @click="isShow">登录</span></p>
         </div>
       </div>
       <div class="nav2">
         <ul>
-          <li v-for="subNav in navList.subNav" :key="subNav.id">
-            <ul>
-              <li :class="nav.prefix" v-for="nav in subNav.nav" :key="nav.id"><a :href="nav.link ? nav.link : 'javascript:;'">{{nav.name}}</a></li>
-            </ul>
-          </li>
-          <li>
-            <ul class="contact">
-              <li>
-                <a href="javascript:;">官方公众号</a>
-                <span><img src="@/assets/images/code1.png" alt="" /></span>
-              </li>
-              <li>
-                <a href="javascript:;">微信用户社区</a>
-                <span><img src="@/assets/images/code2.png" alt="" /></span>
-              </li>
-              <li>
-                <a href="javascript:;">QQ用户社区</a>
-                <span><img src="@/assets/images/code3.png" alt="" /></span>
-              </li>
-              <li>
-                <a href="javascript:;">官方微博</a>
-                <span><img src="@/assets/images/code4.png" alt="" /></span>
+          <li v-for="(subNav,ind) in navList.subNav" :key="subNav.id">
+            <ul :class="{contact:ind==endIndex}">
+              <li :class="nav.prefix" v-for="(nav,subIndex) in subNav.nav" :key="nav.id">
+                <a :href="nav.link ? nav.link : 'javascript:;'">{{nav.name}}</a>
+                <span v-if="ind == endIndex"><img :src="require('@/assets/images/code'+(subIndex+1)+'.png')" alt=""></span>
               </li>
             </ul>
           </li>
         </ul>
       </div>
     </nav>
+    <LoginDialog :isShow="isShowLoginDialog" @close="isShow"/>
   </div>
 </template>
 
 <script>
 import navData from "@/data/nav.json"
+import LoginDialog from "./LoginDialog.vue"
 export default {
     name:"Nav",
     data(){
         return{
-            navList:{}
+            navList:{},
+            endIndex:0,
+            isShowLoginDialog:false
         }
     },
+    components:{LoginDialog},
     mounted(){
         this.getNavData();
+        console.log(this.endIndex);
     },
     methods:{
         getNavData(){
             this.navList = navData;
+            this.endIndex = this.navList.subNav.length-1;
+        },
+        isShow(){
+          this.isShowLoginDialog = !this.isShowLoginDialog;
         }
     }
 };
 </script>
 
 <style>
-/* nav start */
 #nav {
   height: 134px;
   background: url(~@/assets/images/nav_bg.png) center no-repeat;

@@ -58,16 +58,15 @@
                 {"name":"举报查询","link":"","prefix":"hot","id":36},
                 {"name":"作者入驻","link":"","prefix":"","id":37}
             ]
+        },
+        {
+            "id":38,
+            "nav":[
+                {"name":"官方公众号","link":"","prefix":"","id":39,"imgUrl":"code1.png"},
+                {"name":"微信用户社区","link":"","prefix":"","id":40,"imgUrl":"code2.png"},
+                {"name":"QQ用户社区","link":"","prefix":"","id":41,"imgUrl":"code3.png"},
+                {"name":"官方微博","link":"","prefix":"","id":42,"imgUrl":"code4.png"}
+            ]
         }
-    ],
-
-    "qrcodeNav":{
-        "id":38,
-        "nav":[
-            {"name":"官方公众号","link":"","prefix":"","id":39,"imgUrl":"code1.png"},
-            {"name":"微信用户社区","link":"","prefix":"","id":40,"imgUrl":"code2.png"},
-            {"name":"QQ用户社区","link":"","prefix":"","id":41,"imgUrl":"code3.png"},
-            {"name":"官方微博","link":"","prefix":"","id":42,"imgUrl":"code4.png"}
-        ]
-    }
+    ]
 }
