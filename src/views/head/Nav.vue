@@ -4,9 +4,7 @@
     <nav id="nav">
       <div class="nav1">
         <div class="title">
-          <a href="#" target="_blank"
-            ><img src="@/assets/images/logo2.png" alt=""
-          /></a>
+          <a href="#" target="_blank"><img src="@/assets/images/logo2.png" alt=""/></a>
           <h1>和平精英<span>全球玩家的竞技冒险世界</span></h1>
         </div>
         <ul>

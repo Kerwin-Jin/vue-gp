@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import ScrollBar from '../../components/ScrollBar.vue';
+import ScrollBar from '@/components/ScrollBar.vue';
 export default {
     components: { ScrollBar },
     name:"Tips",

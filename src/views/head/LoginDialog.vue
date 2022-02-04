@@ -4,8 +4,8 @@
         <div class="wrap">
             <h3>登录</h3>
             <div class="btn">
-                <a href="#" target="_blank">QQ登录</a>
-                <a href="#" target="_blank">微信登录</a>
+                <a href="javascript:;">QQ登录</a>
+                <a href="javascript:;">微信登录</a>
             </div>
             <button class="close" @click="$emit('close')"></button>
         </div>
